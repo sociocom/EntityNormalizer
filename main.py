@@ -1,6 +1,6 @@
 import argparse
 
-from EntityNormalizer.EntityNormalizer import EntityDictionary, normalize
+from EntityNormalizer import EntityDictionary, normalize
 
 '''
 Command line tool for normalizing entities based on a dictionary.
