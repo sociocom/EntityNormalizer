@@ -34,7 +34,7 @@ class EntityDictionary:
         return self.target_column
 
     def get_normalized_term(self, term):
-        return self.df[self.df.iloc[:, 0] == term].iloc[:, 1].item()
+        return self.target_column[self.source_column.index(term)]
 
 
 class EntityNormalizer:
