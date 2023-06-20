@@ -46,7 +46,7 @@ If the entity is found in the dictionary but the normalization is empty, it will
 ---
 
  ### Python package usage
-After installation,  the `normalized` function can be invoked with the dicitonary and a `list` of entities to produce a `list` of normalized entities.
+After installation,  the `normalize` function can be invoked with the dicitonary and a `list` of entities to produce a `list` of normalized entities.
 
 #### Example
 ```python
@@ -71,14 +71,20 @@ These are a set of Japanese medical dictionaries developed with normalization of
 analysis of adverse events caused by anticancer drugs. Please refer to 
 [this page](https://sociocom.naist.jp/meddic-cancer-ja/) for mor information.
 
-There are convenience classes for loading these dictionaries, which can be accessed with the `Dictionaries` module:
+There are convenient classes for loading these dictionaries, which can be accessed with the `Dictionaries` module:
 
 ```python
-from EntityNormalizer import Dictionaries
+from EntityNormalizer import Dictionaries, normalize
+
+entities = ['entity1', 'entity2', 'entity3']
 
 # Load the dictionaries
 cancer_ade = Dictionaries.MedDicCancerADE()
 cancer_drug = Dictionaries.MedDicCancerDrug()
+
+# Use the dictionaries
+normalized_ade = normalize(entities, cancer_ade, matching_threshold=70)
+normalized_drug = normalize(entities, cancer_drug, matching_threshold=70)
 ```
 
 Both dictionaries use the columns `出現形` (Surface form) and `[細分類]` (Sub-classification) as source and target
