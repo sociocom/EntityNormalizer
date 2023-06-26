@@ -7,7 +7,8 @@ Python tool for normalizing entities based on a dictionary.
 This tool can be used as:
 - a *command line tool*, by cloning this repository and running `pip install .` under the root of this source; 
 then you can run`main.py` with the required parameters to process your entity-listed file.
-- a *Python package* , by installing the package using `pip install EntityNormalizer`
+- a *Python package* , by installing the package using `pip install EntityNormalizer`  
+PyPI page: https://pypi.org/project/EntityNormalizer/
 
 ### Input and output
   
